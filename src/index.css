@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-navy: #2d314d;
+  --color-gray-blue: #9597a5;
+  --color-light-gray: #f4f5f7;
+  --color-off-white: #fafafa;
+  --color-lime: #33d35e;
+  --color-cyan: #2ab6d9;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--color-navy);
+    background: white;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #33d35e;
+    outline-offset: 3px;
+  }
+}
+
+@utility bg-cta {
+  background-image: linear-gradient(
+    191.7deg,
+    #33d35e 8.35%,
+    #2ab6d9 97.75%
+  );
+}
+
+@utility bg-cta-underline {
+  background-image: linear-gradient(
+    183.38deg,
+    #33d35e 8.35%,
+    #2ab6d9 97.75%
+  );
+}
+
+@utility page-wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1110px;
+  padding-inline: 24px;
+
+  @media (width >= 768px) {
+    padding-inline: 40px;
+  }
+
+  @media (width >= 1280px) {
+    padding-inline: 0;
+  }
+}
