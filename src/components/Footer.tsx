@@ -31,40 +31,51 @@ export function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="block size-5 bg-white transition-colors hover:bg-lime"
-                    style={{
-                      maskImage: `url(${social.icon})`,
-                      WebkitMaskImage: `url(${social.icon})`,
-                      maskRepeat: "no-repeat",
-                      WebkitMaskRepeat: "no-repeat",
-                      maskPosition: "center",
-                      WebkitMaskPosition: "center",
-                      maskSize: "contain",
-                      WebkitMaskSize: "contain",
-                    }}
-                  />
+                    className="flex size-5 items-center justify-center"
+                  >
+                    <img
+                      src={social.icon}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="size-5 object-contain transition-[filter] hover:[filter:brightness(0)_saturate(100%)_invert(67%)_sepia(58%)_saturate(464%)_hue-rotate(86deg)_brightness(94%)_contrast(90%)]"
+                    />
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
           <nav aria-label="Footer">
-            <ul className="flex flex-col items-center gap-4 text-center text-sm leading-[1.15] text-white xl:grid xl:grid-cols-2 xl:items-start xl:gap-x-8 xl:gap-y-6 xl:text-left">
-              {leftLinks.map((link) => (
-                <li key={link.label} className="xl:col-start-1">
-                  <a href={link.href} className="transition-colors hover:text-lime">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-              {rightLinks.map((link) => (
-                <li key={link.label} className="xl:col-start-2">
+            <ul className="flex flex-col items-center gap-4 text-center text-sm leading-[1.15] text-white xl:hidden">
+              {FOOTER_LINKS.map((link) => (
+                <li key={link.label}>
                   <a href={link.href} className="transition-colors hover:text-lime">
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
+            <div className="hidden xl:flex xl:gap-8">
+              <ul className="flex w-40 flex-col gap-6 text-sm leading-[1.15] text-white">
+                {leftLinks.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="transition-colors hover:text-lime">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <ul className="flex w-40 flex-col gap-6 text-sm leading-[1.15] text-white">
+                {rightLinks.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="transition-colors hover:text-lime">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
         </div>
 

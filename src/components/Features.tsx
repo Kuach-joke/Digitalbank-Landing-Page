@@ -25,7 +25,7 @@ export function Features() {
           {FEATURES.map((feature) => (
             <li
               key={feature.title}
-              className="flex flex-col items-center gap-10 text-center xl:items-start xl:text-left"
+              className="flex flex-col items-center gap-10 text-center md:items-start md:text-left"
             >
               <div className="relative size-[72px] overflow-clip">
                 <img
