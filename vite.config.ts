@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: '/Digitalbank-Landing-Page/',
+  base: process.env.VERCEL ? '/' : '/Digitalbank-Landing-Page/',
   plugins: [react(), tailwindcss()],
   server: {
     host: "0.0.0.0",
